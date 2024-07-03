@@ -41,3 +41,7 @@ This script automates the creation of users and groups, sets up home directories
 ### Example
 Given an input file `users.txt`:
 
+
+
+
+This work is part of the HNG internship program. To be a part of the amazing and exciting projects, visit  https://hng.tech/internship or https://hng.tech/hire for more information and opportunities
