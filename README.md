@@ -37,10 +37,32 @@ This script automates the creation of users and groups, sets up home directories
     ```bash
     sudo bash create_users.sh <name-of-text-file>
     ```
+### Script Explanation
 
-### Example
-Given an input file `users.txt`:
+#### Script Initialization:
+- Checks if the script is run as root.
+- Ensures the input file is provided.
+- Sets up log and secure directories.
 
+#### Password Generation:
+- Function to generate a random password using `openssl rand`.
+
+#### Reading the Input File:
+- Loops through each line of the input file.
+- Trims whitespace from usernames and group names.
+
+#### User and Group Creation:
+- Checks if the user already exists.
+- Creates the user and their personal group.
+- Sets up the user’s password and stores it securely.
+- Creates additional groups if they don't exist and adds the user to these groups.
+
+#### Logging:
+- Logs each action to `/var/log/user_management.log`.
+- Stores user passwords in `/var/secure/user_passwords.csv` with restricted permissions.
+
+### Secure File Storage
+- Passwords are stored in `/var/secure/user_passwords.csv` with permissions set to `600` (readable only by the file owner).
 
 
 
